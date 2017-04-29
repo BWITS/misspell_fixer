@@ -1,10 +1,10 @@
 # Misspell Fixer
 
-[![Build Status](https://travis-ci.org/ka7/misspell_fixer.svg?branch=master)](https://travis-ci.org/ka7/misspell_fixer)
-[![Coverage Status](https://coveralls.io/repos/github/ka7/misspell_fixer/badge.svg?branch=master)](https://coveralls.io/github/ka7/misspell_fixer?branch=master)
+[![Build Status](https://travis-ci.org/bwits/misspell_fixer.svg?branch=master)](https://travis-ci.org/bwits/misspell_fixer)
+[![Coverage Status](https://coveralls.io/repos/github/bwits/misspell_fixer/badge.svg?branch=master)](https://coveralls.io/github/bwits/misspell_fixer?branch=master)
 [![Circle CI Build Status](https://circleci.com/gh/vlajos/misspell_fixer.svg?style=shield&circle-token=d5d85ed2985b507b547a98e2ace8c21a75395cc2)](https://circleci.com/gh/vlajos/misspell_fixer) -->
 [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~vlajos/) <-- original developer :)
-[![Issue Count](https://codeclimate.com/github/ka7/misspell_fixer/badges/issue_count.svg)](https://codeclimate.com/github/ka7/misspell_fixer)
+[![Issue Count](https://codeclimate.com/github/bwits/misspell_fixer/badges/issue_count.svg)](https://codeclimate.com/github/bwits/misspell_fixer)
 
 ==============
 
@@ -97,6 +97,18 @@ It is based on the following sources for common misspellings:
 * sed
 * diff
 * xargs (for parallelism)
+
+### Run in docker container.
+
+If you are mac or Windows users, this script doesn't work properly. You should run it in docker container.
+
+```
+docker build -t fixer . 
+cd <Folder>
+alias fixer='docker run -ti --rm -v $(pwd):/app fixer '
+fixer -h
+fixer -D . 
+```
 
 ### Author
 
