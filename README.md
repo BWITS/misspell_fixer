@@ -19,6 +19,18 @@ And also important to note to be extra careful when fixing public APIs!
 
 A manual review is always needed to verify that nothing has been broken.
 
+### Run in docker container.
+
+If you are mac or Windows users, this script doesn't work properly. You should run it in docker container.
+
+```
+docker build -t fixer .
+cd <Folder>
+alias fixer='docker run -ti --rm -v $(pwd):/app fixer '
+fixer -h
+fixer -D .
+```
+
 ### Synopsis
     
     misspell_fixer	[OPTION] target
@@ -97,18 +109,6 @@ It is based on the following sources for common misspellings:
 * sed
 * diff
 * xargs (for parallelism)
-
-### Run in docker container.
-
-If you are mac or Windows users, this script doesn't work properly. You should run it in docker container.
-
-```
-docker build -t fixer . 
-cd <Folder>
-alias fixer='docker run -ti --rm -v $(pwd):/app fixer '
-fixer -h
-fixer -D . 
-```
 
 ### Author
 
